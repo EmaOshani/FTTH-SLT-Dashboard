@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTTH New Connection</title>
+
+    <link rel="icon" type="image/png" href="images/slgfavicon.ico" sizes="32x32">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="bs-stepper.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/navbarStyle.css">
+    <link rel="stylesheet" href="css/style_FTTH.css">
+
+</head>
+
+<body>
+    <header id="nav_navbar" >
+        <!-- <a href="#" class="logo">Logo</a> -->
+        
+        <a class="nav_navbar-brand" href="#" >
+            <img src="images/sltblack.png" alt="Logo" class="nav_main" id="logo">
+            <img src="images/slt_mini_white.png" alt="Logo_mini" class="nav_sub" id="logo_mini">
+        </a> 
+        <!-- <div class="title"><h4>Workflow Manager</h4></div> -->
+        <!-- <div class="lineWrap"><div class="line"></div></div>   -->
+        <div class="nav_group">
+            <ul class="nav_navigation"> 
+                <!-- <li><a href="#">Workflow manager</a></li> -->
+                <li><a href="#">FTTH New Connection</a></li>
+            </ul>
+            <ion-icon name="menu-outline" class="nav_menuToggle"></ion-icon>
+            <!-- use image -->
+            <div class="nav_user" onclick="profileToggle();">
+                <img src="images/slt_mini_white.png" alt="user">
+            </div>
+            <div class="nav_profile_details">
+                <div class="nav_menu">
+                    <div class="nav_user-info">
+                        <img src="images/slt_mini_white.png" class="nav_user-pic" alt="">
+                        <h3>Digital Platforms<br><span>Software Developer</span</h3>
+                    </div>
+                    <hr>
+                    <ul>
+                        <li><img src="images/profile.png"><a href="#">Profile</a></li>
+                        <li><img src="images/setting.png"><a href="#">Settings</a></li>
+                        <li><img src="images/logout.png"><a href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        
+    </header>
+    <div class="container pt-4 card-top card_frame mt-5">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mt-2">
+            <div class="col">
+                <div class="card details rounded shadow title">
+                    <div class="card-header rounded-top">
+                        <div class="row">
+                            <div class="col"><h6>TOTAL</h6></div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col"><span class="text-uppercase success">Success:</span></div>
+                            <div class="col"><span class="success">10254564</span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><span class="text-uppercase unsuccess">UnSuccess:</span></div>
+                            <div class="col"><span class="unsuccess">6454565</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card details rounded shadow title">
+                    <div class="card-header rounded-top">
+                        <h6>LAST MONTH</h6>                        
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col"><span class="text-uppercase success">Success:</span></div>
+                            <div class="col"><span class="success">4545654</span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><span class="text-uppercase unsuccess">UnSuccess:</span></div>
+                            <div class="col"><span class="unsuccess">54654654</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card details rounded shadow title">
+                    <div class="card-header rounded-top">
+                        <h6>THIS MONTH</h6>                        
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col"><span class="text-uppercase success">Success:</span></div>
+                            <div class="col"><span class="success">45645654</span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><span class="text-uppercase unsuccess">UnSuccess:</span></div>
+                            <div class="col"><span class="unsuccess">456456456</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Start graphs-->
+    <div class="container py-0 card-top card_frame mt-0">
+        <div class="row row-cols-0 row-cols-md-2 row-cols-lg-3 g-3 mt-0">
+            <div class="col">
+                <div class="card graph shadow" style="height: auto; border-radius: 0.8em; ">
+                    <div class="card-header rounded-top">
+                        <div class="row">
+                            <div class="col"><h6>TOTAL</h6></div>
+                        </div>
+                    </div>
+                    <div class="card-body" >
+                        <canvas  id="Chart1" ></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card graph shadow" style="height: auto; border-radius: 0.8em;">
+                    <div class="card-header rounded-top">
+                        <h6>LAST MONTH</h6>                        
+                    </div>
+                    <div class="card-body">
+                        <canvas  id="Chart2" ></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card graph py-0 px-0 shadow " style="height: auto; border-radius: 0.8em;">
+                    <div class="card-header rounded-top">
+                        <h6>THIS MONTH</h6>                        
+                    </div>
+                    <div class="card-body">
+                        <canvas  id="Chart3" ></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--end graphs-->
+        <hr>
+        <div class="d-flex flex-row-reverse">
+ <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary shadow" data-bs-toggle="modal" data-bs-target="#exampleModal">Show Table</button>
+        </div>
+  <!-- Modal -->
+        <div class="modal fade modal-xl overflow-x-auto" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">FTTH New Connection Details Table</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+
+                    <div class="row row-cols-0 row-cols-md-1 row-cols-lg-2 row-cols-sm-1 g-3 mt-0px-0">
+                        <div class="col-6 ">
+                            <form action="" method="GET">
+                                        <div class="input-group mb-1 action">
+                                            <input type="text" name="search" class="form-control form-control-sm" placeholder="Search Data">
+                                            <button type="submit" class="btn btn-primary">Search</button>
+                                        </div>
+                            </form>
+                        </div>
+                        <div class="col-6 col cols-sm-1 cols-md-1 ">
+                            <form action="" method="GET">
+                                <div class="row">
+                                    <div class="col-5">
+                                            <div class="form-group">
+                                                <input type="date" name="from_date" class="form-control" required value="">
+                                                <label>From Date</label>
+                                            </div>
+                                    </div>
+                                    <div class="col-5 ">
+                                            <div class="form-group">
+                                                <input type="date" name="to_date" class="form-control" required value="">
+                                                <label>To Date</label>
+                                            </div>
+                                    </div>
+                                    <div class="col-2 ms-0 ps-0">
+                                        <div class="form-group">
+                                            <button style="width: 100%;" type="submit" class="btn btn-primary">Filter</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="overflow-x-auto">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Request_Date</th>
+                            <th>NIC</th>
+                            <th>PP</th>
+                            <th>Title</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Birth Date</th>
+                            <th>Nationality</th>
+                            <th>Service Address</th>
+                            <th>Service Add City</th>
+                            <th>Service Add District</th>
+                            <th>Billing Address</th>
+                            <th>Billing Add City</th>
+                            <th>Billing Add Postal Code</th>
+                            <th>RTOM</th>
+                            <th>EQTYPE</th>
+                            <th>Longitude</th>
+                            <th>Latitude</th>
+                            <th>Service Type</th>
+                            <th>Username</th>
+                            <th>Service Add Province</th>
+                            <th>Billing Add Province</th>
+                            <th>Voice Package</th>
+                            <th>BB Package</th>
+                            <th>Peo Package</th>
+                            <th>Billing Add Postal Code</th>
+                            <th>Ref NO</th>
+                            <th>File Upload Status</th>
+                            <th>Reserved Facility Status</th>
+                            <th>Reserved Facility Called</th>
+                            <th>File Upload Facility Called</th>
+                            <th>Gender</th>
+                            <th>Mobile No</th>
+                            <th>Email</th>
+                            <th>Billing Mode</th>
+                            <th>Idd Status</th>
+                            <th>User Comment</th>
+                            <th>Payment Refund Called</th>
+                            <th>Payment Refund Status</th>
+                            <th>SLT NIC</th>
+                            <th>LOOP Availability</th>
+                            <th>Reserved Ref No</th>
+                            <th>Remove Facility Status</th>
+                            <th>Lead ID</th>
+                            <th>Updated Date</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>mdo</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>mdo</td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                    
+
+
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Export CSV</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+        <!--
+        <div class="row row-cols-0 row-cols-md-1 row-cols-lg-2 row-cols-sm-1 g-3 mt-0px-0">
+            <div class="col-6 ">
+                <form action="" method="GET">
+                            <div class="input-group mb-1 action">
+                                <input type="text" name="search" class="form-control form-control-sm shadow" placeholder="Search Data">
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </div>
+                </form>
+            </div>
+            <div class="col-6 col cols-sm-1 cols-md-1 ">
+                <form action="" method="GET">
+                    <div class="row">
+                        <div class="col-5">
+                                <div class="form-group">
+                                    <input type="date" name="from_date" class="form-control shadow" required value="">
+                                    <label>From Date</label>
+                                </div>
+                        </div>
+                        <div class="col-5 ">
+                                <div class="form-group">
+                                    <input type="date" name="to_date" class="form-control shadow" required value="">
+                                    <label>To Date</label>
+                                </div>
+                        </div>
+                        <div class="col-2 ms-0 ps-0">
+                            <div class="form-group">
+                                <button style="width: 100%;" type="submit" class="btn btn-primary">Filter</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        -->
+
+
+    </div>
+    <!--End graphs-->
+
+
+
+        <!-- Modal -->
+        <div class="modal fade bd-example-modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="border-radius: 25px;">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="container">          
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Email</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Email</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Email</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                  </div>
+                    
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+    
+    <div class="nav_background_images">
+        <img class= "nav_slt_background_1" src="images/slt_background_1_new.png" alt="">
+        <img class= "nav_slt_background_2" src="images/slt_background_2_new.png" alt="">
+    </div>
+
+        <!-- cards -->
+        
+        <!-- end of cards -->
+
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0"></script>
+    
+        <script>
+          const ctx1 = document.getElementById('Chart1');
+        
+          new Chart(ctx1, {
+            type: 'bar',
+            data: {
+              labels: ['Total Requests', 'Loop Availability', 'Reserve Facility', 'Payment Reunded', 'Lead Created'],
+              datasets: [{
+                label: '',
+                data: [1000, 400, 300, 500, 200],
+                backgroundColor: [
+                    'rgba(250, 65, 104, 1)',
+                    'rgba(255, 149, 43, 1)',
+                    'rgba(0, 222, 222, 1)',
+                    'rgba(21, 147, 232, 1)',
+                    'rgba(124, 59, 255, 1)'
+        ],
+                borderWidth: 0
+              },{
+                label: 'Not Available Loop for',
+                data: [0, 200, 0, 0, 0],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(255, 190, 36, 1)',
+                    'rgba(255, 205, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(54, 162, 235, 1)',
+        ],
+                borderWidth: 0
+                
+                
+              }]
+            },
+    
+    
+        options: {
+            plugins: {
+      legend: {
+        onClick: null,
+        display: null
+    },
+    },
+        responsive: true,
+        scales: {
+          x: {ticks: {
+                font: {
+                    size: 7 //this change the font size
+                    
+                }
+            },
+        stacked: true,
+      },
+          y: {
+            stacked: true
+          }
+        }
+      }
+    
+          });
+        </script>
+
+
+<script>
+    const ctx2 = document.getElementById('Chart2');
+  
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['Total Requests', 'Loop Availability', 'Reserve Facility', 'Payment Reunded', 'Lead Created'],
+        datasets: [{
+          label: '# of Votes',
+          data: [100, 20, 30, 10, 90],
+          backgroundColor: [
+          'rgba(250, 65, 104, 1)',
+                    'rgba(255, 149, 43, 1)',
+                    'rgba(0, 222, 222, 1)',
+                    'rgba(21, 147, 232, 1)',
+                    'rgba(124, 59, 255, 1)'
+  ],
+          borderWidth: 0
+        },{
+          label: 'Not Available Loop for',
+          data: [0, 40, 0, 0, 0],
+          backgroundColor: [
+          'rgba(255, 99, 132, 1)',
+                    'rgba(255, 190, 36, 1)',
+                    'rgba(255, 205, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(54, 162, 235, 1)',
+  ],
+          borderWidth: 0
+          
+          
+        }]
+      },
+
+
+  options: {
+    plugins: {
+      legend: {
+        onClick: null,
+        display: null
+    },
+    },
+
+  responsive: true,
+  scales: {
+    x: {ticks: {
+                font: {
+                    size: 7 //this change the font size
+                    
+                }
+            },
+        stacked: true,
+      },
+    y: {
+      stacked: true
+    }
+  }
+}
+
+    });
+  </script>
+
+
+
+
+
+
+<script>
+    const ctx3 = document.getElementById('Chart3');
+  
+    new Chart(ctx3, {
+      type: 'bar',
+      data: {
+        labels: ['Total Requests', 'Loop Availability', 'Reserve Facility', 'Payment Reunded', 'Lead Created'],
+        datasets: [{
+          data: [50, 40, 30, 10, 40],
+          backgroundColor: [
+          'rgba(250, 65, 104, 1)',
+                    'rgba(255, 149, 43, 1)',
+                    'rgba(0, 222, 222, 1)',
+                    'rgba(21, 147, 232, 1)',
+                    'rgba(124, 59, 255, 1)'
+  ],
+          borderWidth: 0
+        },{
+          label: 'Not Available Loop for',
+          data: [0, 30, 0, 0, 0],
+          backgroundColor: [
+          'rgba(255, 99, 132, 1)',
+                    'rgba(255, 190, 36, 1)',
+                    'rgba(255, 205, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(54, 162, 235, 1)',
+  ],
+          borderWidth: 0
+          
+          
+        }]
+      },
+
+
+  options: {
+    plugins: {
+      legend: {
+        onClick: null,
+        display: null
+    },
+    },
+
+  responsive: true,
+  scales: {
+    x: {ticks: {
+                font: {
+                    size: 7 //this change the font size
+                    
+                }
+            },
+        stacked: true,
+      },
+    y: {
+      stacked: true
+    }
+  }
+}
+
+    });
+  </script>
+
+
+
+
+    
+
+    <script>
+        function profileToggle() {
+            const toggleprofile = document.querySelector('.nav_menu');
+            toggleprofile.classList.toggle('active');
+        }
+    
+        document.addEventListener('click', function(event) {
+            const toggleprofile = document.querySelector('.nav_menu');
+            const user = document.querySelector('.nav_user');
+            const isClickInsideMenu = toggleprofile.contains(event.target);
+            const isClickOnUser = user.contains(event.target);
+            
+            if (!isClickInsideMenu && !isClickOnUser) {
+                toggleprofile.classList.remove('active');
+            }
+        });
+        
+
+        let navigation = document.querySelector('.nav_navigation');
+        let menuToggle = document.querySelector('.nav_menuToggle');
+        let header = document.querySelector('header');
+        
+        menuToggle.onclick = function(){
+            header.classList.toggle('open');
+        }
+
+        var content = document.getElementsByTagName('body')[0];
+        var navColor = document.getElementsByTagName('header')[0]; //delete
+        var logo = document.getElementById('logo');
+        var logo_mini = document.getElementById('logo_mini');
+        var menu_toggle = document.querySelector('.nav_menuToggle');
+        var navigation_dark = document.querySelector('.nav_navigation');
+        var group = document.querySelector('.nav_group');
+        
+        </script>
+
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="bs-stepper.min.js"></script>
+</body>
+</html>
+
+
+

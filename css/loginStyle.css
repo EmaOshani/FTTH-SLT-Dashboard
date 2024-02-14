@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap'); 
+
+:root{
+  --lg-font: 'Kaisei Tokumin', serif;
+  --sm-font: 'Poppins', sans-serif;
+  --blue: #1c0378;
+  --white: #fff;
+  --grey: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+}
+
+body {
+    background: #0055a5;
+    position: relative;
+    background-image: url("bluewhite3.jfif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 92vh;
+    background-attachment: fixed;
+    overflow: hidden;
+  }
+
+.row{
+  max-width: 90vw;
+}
+
+.title{
+  color: var(--blue);
+  font-weight: 700;
+  font-style: var(--lg-font);
+}
+.logging-heading{
+  font-weight: 300;
+}
+
+form{
+  min-height: 60vh;
+}
+.form-control{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    background-color: #fff;
+}
+.form-floating .form-control:autofill{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 60px;
+  background-color: #fff;
+}
+input{
+  background-color: #1c0378;
+}
+.btn-primary{
+    border-radius: 60px;
+
+}
+  .btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .profile-image-pic{
+    height: 110px;
+    width: 110px;
+    object-fit: cover;
+    border-color: var(--black2);
+    border-width: thin;
+  }
+
+ .btn-primary:hover{
+  background-color: var(--blue);
+ }
+/* Custom styles to move the login card to the right side */
+#login-card {
+  float: right;
+  margin-right: 10%; /* Adjust the margin as needed */
+}
+
+/* Optional: Center the card horizontally on smaller screens */
+@media (max-width: 768px) {
+  #login-card {
+    float: none;
+    margin: 0 auto;
+  }
+}
+    
+
+
+.login {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-size: cover;
+  background-position: center;
+}
+
+.login-heading {
+  font-weight: 300;
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}

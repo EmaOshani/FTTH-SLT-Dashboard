@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap'); 
+
+:root{
+    --lg-font: 'Kaisei Tokumin', serif;
+    --sm-font: 'Poppins', sans-serif;
+    --pink: #e5345b;
+    --blue: #0056a4;
+    --white: rgb(255,255,255);
+    --black2: #999;
+}
+
+body{
+    background: rgb(255, 255, 255);
+    background-image: url("../images/bluewhite3.jfif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: var(--sm-font);
+}
+
+.btn-primary {
+    color: #ffffff;
+    background-color: var(--blue);
+}
+
+.btn-primary:hover {
+    color: #ffffff;
+    background-color: #0067c8;
+
+}
+
+@media screen and (min-width: 676px) {
+    .modal-dialog {
+      max-width: 85%; /* New width for default modal */
+    }
+}
+
+
+/* navbar */
+/* .navbar{
+    box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img{
+    width: 100px;
+    height: 40px;
+    margin-right: 200px;
+}
+
+.navbar-brand span{
+    letter-spacing: 2px;
+    font-family: var(--lg-font);
+    margin-left: 200px;
+}
+
+.navbar span{
+    float: right;
+    padding-top: 18px;
+    color: var(--blue);
+    letter-spacing: 2px;
+    font-size: 20px;
+    padding-right: 50px;
+}
+
+.navbar .collapse .navbar-nav{
+    padding-top: 17px;
+}
+
+.navbar .collapse .navbar-nav .nav-item .nav-link{
+    color: var(--blue);
+}
+
+a{
+    color: var(--blue);
+}
+
+
+.user{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+/* cards */
+
+
+
+.details {
+    max-width: 600px;
+    max-height: 120px;
+    
+  }
+  
+.card-top{
+    margin-top: 90px;
+}
+
+.rounded { /*card*/
+    border-radius: 0.8rem !important;
+    
+
+    
+  }
+
+.graph:hover{
+    cursor: pointer;
+    border-color: var(--blue);
+
+}
+
+
+.rounded-top {
+    border-top-left-radius: 0.8rem !important;
+    border-top-right-radius: 0.8rem !important;
+    margin: 0;
+    
+  }
+  
+.title h3{
+    font-weight: 300;
+}
+.title h4, h5, h6, p{
+    color: var(--blue);
+    font-size: larger;
+    text-align: center;
+    margin: auto;
+}
+.title span{
+    float: right;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 400;
+    padding-right: 20px;
+}
+
+.title .success{
+    color: green;
+}
+.title .unsuccess{
+    color: rgb(207, 11, 11);
+}
+
+.title:hover h4, .title:hover h, .title:hover h6,  .title:hover h5, .title:hover p, .title:hover span{
+    color: #fff
+}
+  
+.title:hover{
+    box-shadow: 0 0 25px 0 rgba(20,27,201,.05);
+    cursor: pointer;
+    background-image: linear-gradient(-45deg, var(--blue) 0%, #0b9dff 100%)
+}
+
+.card_frame{
+    width: 100%;
+}
+
+
+/* end of cards */
+
+.infor{
+    position: relative;
+    min-height: 500px;
+    background: var(--white);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.18);
+    border-radius: 20px;   
+}
+
+.info form{ 
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* custom css search */
+
+.continer{
+    width: 100%;
+    min-height: 100vh;
+    padding: 5%;
+    background-image: linear-gradient(rgba(0, 29, 191, 0.9),rgba(0, 20, 132, 0.9)), url(images/3.png) ;
+}
+
+/* date range  */
+.daterangePicker{
+    background: #fff;
+    cursor: pointer;
+    margin: 25px;
+    text-align: center;
+    padding: 10px 10px;
+    border: 1px solid #ccc;
+    width: 25%; 
+    border-radius: 50px;
+}
+
+.table{
+    border: #1c0378;
+}
+
+.table tbody tr:hover{
+    background-color: lightgray;
+    /* color: var(--white); */
+    cursor: pointer;
+}
+.table table, .modal-body table {
+    width: 100%;
+    border-collapse: collapse;
+    z-index: -10;
+  }
+.table th{
+    border: 1px solid black;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+.table tr{
+    padding: 0px;
+    font-size: 12px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.6);
+}
+.table td{
+    padding: 2px;
+}
+
+.table th {
+    background-color: var(--black1);
+    color: white;
+    background-color: rgb(57, 56, 56);
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+    white-space: nowrap;;
+  }
+
+.table tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  /* pagination */
+.container .row .pagination{
+    color: red;
+    float: right;
+    font-size: large;
+    margin-bottom: 10px;
+}
+.page_custom a{
+    border: 1px solid gray;
+    border-radius: 5px;
+    color: white;
+    background-color: gray;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-decoration: none;
+
+}
+.page_custom a:hover{
+    color: #ccc;
+    background-color: var(--blue);
+}
+
+.page_numbers{
+    color: red;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.page_numbers b{
+    color: var(--white);
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.page_numbers a{
+    color: var(--white);
+    background-color: gray;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+}
+.page_numbers a:hover{
+    color: var(--white);
+    background-color: var(--blue);
+    cursor: pointer;
+}
+
+.page_numbers b:hover{
+    color: var(--blue);
+    background-color: blue;
+    cursor: pointer;
+}
+
+.excel{
+    margin-left: 75px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(4, 99, 35);
+    padding-left: 5px;
+    padding-right: 5px;
+    text-decoration: none;
+}
+.excel:hover{
+    color: #ccc;
+    background-color: var(--blue);
+}
+
+/* Loarder */
+  
+  /* Add animation to "page content" */
+  .animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s;
+  }
+  
+  @-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+  }
+  
+  @keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
+  
+  #myDiv {
+    display: none;
+    text-align: center;
+  }
+
+
+/* end of date range */
+
+
+/* search bar */
+
+/*    <!-- search bar -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <form action="" method="GET">
+                                <div class="col-md-3">
+                                    <div class="input-group my-4 action">
+                                        <input type="text" name="search" value="<?php if(isset($_GET['search'])){echo $_GET['search'];} ?>" class="form-control" placeholder="Search Data">
+                                        <button type="submit" class="btn btn-primary">Search</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-9" >
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>From Date</label>
+                                            <input type="date" name="from_date" class="form-control" value="<?php if(isset($_GET['from_date'])){echo $_GET['from_date'];} ?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>To Date</label>
+                                            <input type="date" name="to_date" class="form-control" value="<?php if(isset($_GET['to_date'])){echo $_GET['to_date'];} ?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group mt-4">
+                                            <button type="submit" class="btn btn-primary">Filter</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ */
